@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Zypher Chat Interface</title>
+        <link rel="stylesheet" href="style.css">
+        <link rel="stylesheet" href="markdown.css">
+    </head>
+    
+    <body>
+        <div class="container">
+            <header>
+                <h1>Zypher Chat</h1>
+                <p>Chat with your AI agent powered by Claude</p>
+            </header>
+            
+            <div id="chat-container" class="chat-container"></div>
+            
+            <div class="input-container">
+                <input 
+                    type="text" 
+                    id="message-input" 
+                    placeholder="Type your message here..."
+                    autocomplete="off"
+                />
+                <button id="send-button">
+                    Send
+                </button>
+            </div>
+        </div>
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script> 
+    <script src="script.js"></script>
+    </body>
+
+</html>
