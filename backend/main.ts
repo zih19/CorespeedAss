@@ -35,6 +35,14 @@ await agent.mcp.registerServer({
     },
   },
 });
+// await agent.mcp.registerServer({
+//   id: "fetch",
+//   type: "command",
+//   command: {
+//     command: "npx",
+//     args: ["-y", "@modelcontextprotocol/server-fetch"],
+//   },
+// });
 
 // // Run a task - the agent will use web crawling to find current AI news
 // const event$ = agent.runTask(
@@ -115,7 +123,27 @@ Deno.serve({port: 8000}, async (req) => {
           
           try {
             // run the agent task
-            const event$ = agent.runTask(message, "claude-sonnet-4-20250514");
+            const event$ = agent.runTask(
+                  `
+                SYSTEM INSTRUCTIONS:
+                You MUST follow the Firecrawl MCP tool schema exactly.
+
+                When calling "firecrawl_search":
+                - "sources" MUST be an array of objects:
+                    [{ "type": "web", "url": "https://example.com" }]
+                - NEVER use:
+                    "sources": "string"
+                    "sources": ["string"]
+                - If unsure what to put: use "sources": [].
+
+                You must always follow JSON schemas strictly when invoking MCP tools.
+                Return tables, structured markdown, and formatted content normally.
+
+                USER MESSAGE:
+                ${message}
+                `,
+                  "claude-sonnet-4-20250514",
+            );
 
             for await (const event of eachValueFrom(event$)) {
 
