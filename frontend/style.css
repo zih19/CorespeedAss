@@ -19,8 +19,8 @@ body {
   border-radius: 20px;
   box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
   width: 100%;
-  max-width: 800px;
-  height: 600px;
+  max-width: 900px;
+  height: 700px;
   display: flex;
   flex-direction: column;
   overflow: hidden;
@@ -46,6 +46,7 @@ header p {
 .chat-container {
   flex: 1;
   overflow-y: auto;
+  overflow-x: hidden;
   padding: 20px;
   background: #f8f9fa;
 }
@@ -56,6 +57,8 @@ header p {
   border-radius: 12px;
   max-width: 80%;
   word-wrap: break-word;
+  word-break: break-word;
+  overflow-wrap: break-word;
   animation: fadeIn 0.3s ease-in;
 }
 
@@ -82,6 +85,7 @@ header p {
   color: #333;
   border: 1px solid #e0e0e0;
   border-bottom-left-radius: 4px;
+  max-width: 90%;
 }
 
 .thinking-message {

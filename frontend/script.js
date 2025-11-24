@@ -32,6 +32,7 @@ function scrollToBottom() {
  * Handle different event types from the agent
  */
 function handleEvent(event) {
+    
 
     switch (event.type) {
         case 'text':
@@ -51,7 +52,7 @@ function handleEvent(event) {
             } else {
                 currentAgentMessageElement.textContent = newText; // fallback to plain text
             }
-            
+
             scrollToBottom();
             break;
         case 'thinking':

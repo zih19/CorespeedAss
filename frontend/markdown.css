@@ -1,22 +1,35 @@
-/* Add these styles to your existing style.css */
+/* ===========================
+   MARKDOWN FORMATTING STYLES
+   =========================== */
 
+/* Ensure agent message doesn't overflow */
+.agent-message {
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+  word-break: break-word;
+  hyphens: auto;
+}
+
+/* Headings */
 .agent-message h1,
 .agent-message h2,
-.agent-message h3 {
+.agent-message h3,
+.agent-message h4 {
   margin-top: 16px;
   margin-bottom: 8px;
   font-weight: 600;
   color: #333;
+  line-height: 1.4;
 }
 
 .agent-message h1 {
-  font-size: 1.5em;
+  font-size: 1.4em;
   border-bottom: 2px solid #667eea;
-  padding-bottom: 4px;
+  padding-bottom: 6px;
 }
 
 .agent-message h2 {
-  font-size: 1.3em;
+  font-size: 1.2em;
   color: #667eea;
 }
 
@@ -24,71 +37,111 @@
   font-size: 1.1em;
 }
 
+/* Paragraphs */
 .agent-message p {
-  margin: 8px 0;
-  line-height: 1.6;
+  margin: 10px 0;
+  line-height: 1.7;
 }
 
+/* Lists - FIXED ALIGNMENT */
 .agent-message ul,
 .agent-message ol {
-  margin: 8px 0;
-  padding-left: 24px;
+  margin: 12px 0;
+  padding-left: 30px;
+  list-style-position: outside;
+}
+
+.agent-message ul {
+  list-style-type: disc;
+}
+
+.agent-message ol {
+  list-style-type: decimal;
 }
 
 .agent-message li {
-  margin: 4px 0;
-  line-height: 1.5;
+  margin: 6px 0;
+  line-height: 1.6;
+  padding-left: 8px;
 }
 
+.agent-message ul ul,
+.agent-message ol ul {
+  list-style-type: circle;
+  margin-top: 4px;
+  margin-bottom: 4px;
+}
+
+.agent-message ul ul ul,
+.agent-message ol ul ul,
+.agent-message ol ol ul,
+.agent-message ul ol ul {
+  list-style-type: square;
+}
+
+/* Text formatting */
 .agent-message strong {
   font-weight: 600;
-  color: #333;
+  color: #2c3e50;
 }
 
 .agent-message em {
   font-style: italic;
 }
 
+/* Inline code */
 .agent-message code {
   background: #f4f4f4;
   padding: 2px 6px;
-  border-radius: 3px;
-  font-family: 'Courier New', monospace;
+  border-radius: 4px;
+  font-family: 'Monaco', 'Courier New', monospace;
   font-size: 0.9em;
+  color: #e83e8c;
+  word-break: break-all;
 }
 
+/* Code blocks */
 .agent-message pre {
-  background: #f4f4f4;
-  padding: 12px;
+  background: #2d2d2d;
+  color: #f8f8f2;
+  padding: 16px;
   border-radius: 8px;
   overflow-x: auto;
-  margin: 8px 0;
+  margin: 12px 0;
 }
 
 .agent-message pre code {
   background: none;
   padding: 0;
+  color: #f8f8f2;
+  word-break: normal;
 }
 
+/* Blockquotes */
 .agent-message blockquote {
   border-left: 4px solid #667eea;
-  padding-left: 12px;
-  margin: 8px 0;
+  padding-left: 16px;
+  margin: 12px 0;
   color: #666;
   font-style: italic;
 }
 
+/* Tables */
 .agent-message table {
   border-collapse: collapse;
   width: 100%;
-  margin: 12px 0;
+  margin: 16px 0;
+  font-size: 0.95em;
+  overflow-x: auto;
+  display: block;
 }
 
 .agent-message th,
 .agent-message td {
   border: 1px solid #ddd;
-  padding: 8px;
+  padding: 10px;
   text-align: left;
+  word-break: break-word;
 }
 
 .agent-message th {
@@ -101,8 +154,36 @@
   background-color: #f9f9f9;
 }
 
+.agent-message tr:hover {
+  background-color: #f0f0f0;
+}
+
+/* Horizontal rules */
 .agent-message hr {
   border: none;
-  border-top: 1px solid #ddd;
-  margin: 16px 0;
+  border-top: 2px solid #e0e0e0;
+  margin: 20px 0;
+}
+
+/* Links */
+.agent-message a {
+  color: #667eea;
+  text-decoration: none;
+}
+
+.agent-message a:hover {
+  text-decoration: underline;
+}
+
+/* Images */
+.agent-message img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 8px;
+  margin: 12px 0;
+}
+
+/* Ensure no horizontal overflow */
+.agent-message * {
+  max-width: 100%;
 }
